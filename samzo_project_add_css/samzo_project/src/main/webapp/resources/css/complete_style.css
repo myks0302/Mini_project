@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+div{
+	width: 300px;
+	height: 60px;
+	
+	box-sizing: border-box;
+	border: 1px solid black;
+	
+	display: flex;
+	justify-content: center;
+}
+
+d3{
+	margin-top: 10px;
+}
+
+button{
+	background-color: rgba(3, 199, 90, 0.12);
+	color: #009f47;
+	
+	border: none;
+	text-align: center;
+		
+	width: 85px;
+	height: 35px;
+	
+	margin-top: 12px;
+	margin-left: 15px;
+}

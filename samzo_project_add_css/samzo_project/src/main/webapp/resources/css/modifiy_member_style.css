@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+body{
+	overflow-x: auto;
+	overflow-y: auto;
+		
+	display: flex;
+	justify-content: center;
+}
+
+div{
+	width: 400px;
+	height: 300px;
+	
+	box-sizing: border-box;
+	border: 1px solid black;
+}
+
+h1{
+	margin-left: 120px;
+}
+
+table {
+	margin: 0 auto;
+}
+
+button{
+	background-color: rgba(3, 199, 90, 0.12);
+	color: #009f47;
+	
+	border: none;
+	
+	text-align: center;
+}
+
+tr input:not(input[type=text]) {
+	background-color: rgba(3, 199, 90, 0.12);
+	color: #009f47;
+	
+	border: none;
+	
+	text-align: center;
+}
+
+tr:first-child input[type=text]{
+	width: 96%;
+}
+
+tr:nth-child(3) input[type=text]{
+	width: 96%;
+}

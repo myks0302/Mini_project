@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings> 
+		<setting name="jdbcTypeForNull" value="NULL" /> 
+	</settings>
+	<typeAliases>
+		<typeAlias alias="board" type="org.samzo.cafe.board.BoardDTO"/>
+		<typeAlias alias="hhead" type="org.samzo.cafe.board.HorseDTO"/>
+		<typeAlias alias="rreply" type="org.samzo.cafe.board.ReplyDTO"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="mappers/BoardMapper.xml" />
+		<mapper resource="mappers/UserMapper.xml" />
+	</mappers>
+</configuration>
