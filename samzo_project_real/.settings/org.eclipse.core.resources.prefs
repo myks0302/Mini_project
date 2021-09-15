@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/main/java/org/samzo/cafe/BoardController.java=UTF-8
+encoding//src/main/java/org/samzo/cafe/HomeController.java=UTF-8
+encoding//src/main/java/org/samzo/cafe/board/BoardService.java=UTF-8
+encoding//src/main/java/org/samzo/cafe/board/impl/BoardDAO.java=UTF-8
+encoding//src/main/java/org/samzo/cafe/board/impl/BoardServiceImpl.java=UTF-8

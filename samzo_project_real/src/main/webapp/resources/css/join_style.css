@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+body{
+	display: flex;
+	justify-content: center;
+}
+
+.join_box{
+	width: 400px;
+	height: 300px;
+	
+	border: 2px solid #009f47;
+	border-radius: 10px;
+	
+	background-color: white;
+	box-shadow: 0 0 10px rgb(67, 78, 54);)
+}
+
+h1{
+	color: green;
+	margin-left: 7px;
+	
+	margin-top: 30px;
+	margin-left: 80px;
+}
+
+table {
+	margin: 0 auto;
+}
+
+tr:nth-child(2) input[type=text]{
+	width: 96%;
+}
+
+tr:last-child input{
+	width: 65px;
+	height: 35px;
+	
+	background-color: rgba(3, 199, 90, 0.12);
+	color: #009f47;
+	
+	border: none;
+	
+	text-align: center;
+}

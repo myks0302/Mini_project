@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+	body{
+		overflow-x: auto;
+		overflow-y: auto;
+		
+		display: flex;
+		justify-content: center;
+	}
+
+	header{
+		width: 1200px;
+		height: 200px;
+		
+		box-sizing: border-box;
+		border: 1px solid black;
+		
+	}
+	
+	header:hover{
+		cursor: pointer;
+	}
+	
+	.container{
+		width: 1200px;
+		height: 700px;
+		
+		box-sizing: border-box;
+		border: 2px solid #009f47;
+		border-radius: 10px;
+		
+		overflow-y: auto;
+	}
+	
+	h1{
+		color: #009f47;
+	}
+	
+	.container table{
+		width: 1000px;
+		height: 600px;
+		
+		margin-top: 65px;
+	}
+	
+	.container table tr:nth-child(-n+2){
+		height: 25px;
+	}
+	
+	.container table tr:last-child{
+		height: 25px;
+	}
+	
+	.container table tr:nth-child(3){
+		height: 435px;
+	}
+	
+	.container button{
+		background-color: rgba(3, 199, 90, 0.12);
+		color: #009f47;
+		
+		border: none;
+		text-align: center;
+		
+		width: 70px;
+		height: 35px;
+		
+		float: left;
+		margin-left: 100px;
+	}
+	
+	.container button:nth-child(2){
+		float: right;
+		
+		width: 85px;
+		
+		margin-right: 100px;
+	}
+	
+	.container button a{
+		color: #009f47;
+		text-decoration: none;
+	}
+	
+	.container button a{
+		color: #009f47;
+		text-decoration: none;
+	}
+	
+	.container button a{
+		color: #009f47;
+		text-decoration: none;
+	}
+	
+	.container form input{
+		background-color: rgba(3, 199, 90, 0.12);
+		color: #009f47;
+		
+		border: none;
+		text-align: center;
+		
+		width: 45px;
+		height: 35px;
+		
+		float: left;
+		margin-left: 15px
+	}
+	
+	td{
+	padding-left: 10px;
+	}
+	
+	.container form input:hover{
+		cursor: pointer; 
+	}
+	
+	
+	.reply{
+		width: 1200px;
+		height: 300px;
+		
+		box-sizing: border-box;
+		border: 2px solid #009f47;
+		border-radius: 10px;
+		border-top: none;
+		
+		overflow-y: auto;
+	}
+	
+	.reply table{
+		margin-top: 20px;
+	}
+	
+	.reply table tr th{
+		width: 20px;
+	}
+	
+	.reply table tr th:nth-child(3){
+		width: 200px;
+	}
+	
+	.reply_act{
+		width: 700px;
+		height: 180px;
+		
+		box-sizing: border-box;
+		border: 2px solid #009f47;
+		border-radius: 10px;
+		border-top: none;
+		
+		margin-left: 250px;
+	}
+	
+	.reply_act textarea{
+		width: 500px;
+		height: 120px;
+		
+		margin-top: 30px;
+	}
+	
+	.reply_act input[type="submit"]{
+		width: 80px;
+		height: 80px;
+		
+		box-sizing: border-box;
+		border: 2px solid #009f47;
+		border-radius: 10px;
+		
+		position: relative;
+		bottom: 50px;
+		left: 20px;
+		
+		text-align: center;
+	}
+	
+	
