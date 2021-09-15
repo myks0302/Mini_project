@@ -17,7 +17,7 @@
 <body>
  	<div>
 		<header onclick="location.href='list.do'">
-			<img src="../resources/photo/header1.png" alt="header1" height="250px" width="100%" >
+			<img src="../resources/photo/header1.png" alt="header1" height="100%" width="100%" >
 		</header>
 		
 		<div class="container">

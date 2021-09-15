@@ -4,7 +4,8 @@
 		overflow-x: auto;
 		overflow-y: auto;
 		
-		margin-left: 350px;
+		display: flex;
+		justify-content: center;
 	}
 
 	header{
@@ -13,6 +14,7 @@
 		
 		box-sizing: border-box;
 		border: 1px solid black;
+		
 	}
 	
 	header:hover{
@@ -24,9 +26,14 @@
 		height: 700px;
 		
 		box-sizing: border-box;
-		border: 1px solid black;
+		border: 2px solid #009f47;
+		border-radius: 10px;
 		
 		overflow-y: auto;
+	}
+	
+	h1{
+		color: #009f47;
 	}
 	
 	.container table{
@@ -37,15 +44,15 @@
 	}
 	
 	.container table tr:nth-child(-n+2){
-		height: 15px;
+		height: 25px;
 	}
 	
 	.container table tr:last-child{
-		height: 15px;
+		height: 25px;
 	}
 	
 	.container table tr:nth-child(3){
-		height: 455px;
+		height: 435px;
 	}
 	
 	.container button{
@@ -99,6 +106,10 @@
 		margin-left: 15px
 	}
 	
+	td{
+	padding-left: 10px;
+	}
+	
 	.container form input:hover{
 		cursor: pointer; 
 	}
@@ -109,7 +120,9 @@
 		height: 300px;
 		
 		box-sizing: border-box;
-		border: 1px solid black;
+		border: 2px solid #009f47;
+		border-radius: 10px;
+		border-top: none;
 		
 		overflow-y: auto;
 	}

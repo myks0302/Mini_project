@@ -6,7 +6,9 @@
 		<id column="id" property="id" /> <result column="name" property="name" /> 
 		</resultMap> -->
 
-	<select id="selectBoard" resultType="board">
+	<select
+		id="selectBoard"
+		resultType="board">
 		<![CDATA[
 			select bbs_number, bbs_category, hh_head, m_nickname, bbs_title, bbs_content, bbs_date, bbs_views
 			from bulletboard, member, horsehead
@@ -17,32 +19,97 @@
 		]]>
 	</select>
 
-	<select id="selectAll" resultType="board">
+	<select
+		id="selectCategory"
+		resultType="board">
 		<![CDATA[
 			select bbs_number, bbs_category, hh_head, m_nickname, bbs_title, bbs_content, bbs_date, bbs_views
 			from bulletboard, member, horsehead
 			where bbs_activated = 1
 			and bbs_writer = m_number
 			and bbs_head = hh_number
+			and bbs_category = #{bbs_category}
 			order by bbs_number asc
 		]]>
 	</select>
 
-	<select id="getCategory" resultType="String">
+	<select
+		id="selectAll"
+		resultType="board">
+		<![CDATA[
+select bbs_number, bbs_category, hh_head, m_nickname, bbs_title, bbs_content, bbs_date, bbs_views   
+		from(select rownum as rn, bbs_number, bbs_category, hh_head, m_nickname, bbs_title, bbs_content, bbs_date, bbs_views
+     	 from(select bbs_number, bbs_category, hh_head, m_nickname, bbs_title, bbs_content, bbs_date, bbs_views
+               from bulletboard, member, horsehead
+                where bbs_activated = 1
+                and bbs_writer = m_number
+                and bbs_head = hh_number 
+                ORDER BY bbs_number DESC
+      			))
+			where rn between #{rowStart} and #{rowEnd}
+		]]>
+	</select>
+	
+	<select
+		id="listCount"
+		resultType="int"> <!--총 게시글 -->
+	<![CDATA[
+		SELECT COUNT(bbs_number)
+		  FROM bulletboard
+		 WHERE bbs_number > 0
+	]]>
+	</select>
+	
+
+	<select
+		id="searchTitle"
+		resultType="board">
+		<![CDATA[
+			SELECT bbs_number, bbs_category, hh_head, m_nickname, bbs_title, bbs_content, bbs_date, bbs_views
+			FROM bulletboard, member, horsehead
+			WHERE bbs_activated = 1
+				and bbs_writer = m_number
+				and bbs_head = hh_number
+				and bbs_title LIKE '%' || #{bbs_title} ||'%'
+			ORDER BY bbs_number asc
+		]]>
+	</select>
+
+	<select
+		id="searchContent"
+		resultType="board">
+		<![CDATA[
+			SELECT bbs_number, bbs_category, hh_head, m_nickname, bbs_title, bbs_content, bbs_date, bbs_views
+			FROM bulletboard, member, horsehead
+			WHERE bbs_activated = 1
+				and bbs_writer = m_number
+				and bbs_head = hh_number
+				and bbs_content LIKE '%' || #{bbs_content} || '%'
+			ORDER BY bbs_number asc
+		]]>
+	</select>
+
+	<select
+		id="getCategory"
+		resultType="String">
 		<![CDATA[
 			select *
 			from category
 		]]>
 	</select>
 
-	<insert id="insertboard" parameterType="board">
+	<insert
+		id="insertboard"
+		parameterType="board">
 		<![CDATA[
 			insert into bulletboard(bbs_number, bbs_category, bbs_head, bbs_writer, bbs_title, bbs_content, bbs_date, bbs_views, bbs_activated)
-			values(bbs_num.nextval,#{bbs_category},3,1000,#{bbs_title},#{bbs_content},sysdate,0,1)
+			values(bbs_num.nextval,#{bbs_category},3,#{bbs_writer},#{bbs_title},#{bbs_content},sysdate,0,1)
 		]]>
 	</insert>
 
-	<update id="updateboard" parameterType="board">
+	<update
+		id="updateboard"
+		parameterType="board">
 		<![CDATA[
 			update bulletboard
 			set bbs_category=#{bbs_category},bbs_title=#{bbs_title}, bbs_content=#{bbs_content}
@@ -50,21 +117,29 @@
 		]]>
 	</update>
 
-	<delete id="deleteBoard" parameterType="board">
+	<delete
+		id="deleteBoard"
+		parameterType="board">
 		<![CDATA[
-			delete from bulletboard where bbs_number = #{bbs_number}
+			update bulletboard
+			set bbs_activated = 0
+			where bbs_number = #{bbs_number}
 		]]>
 	</delete>
 
-	<update id="updateViewsNumber" parameterType="board">
+	<update
+		id="updateViewsNumber"
+		parameterType="board">
 		<![CDATA[
 			UPDATE bulletboard 
 			SET bbs_views = #{bbs_views}
 			WHERE bbs_number = #{bbs_number}
 		]]>
 	</update>
-	
-	<select id="getHead" resultType="hhead">
+
+	<select
+		id="getHead"
+		resultType="hhead">
 		<![CDATA[
 			select hh_number, hh_head 
 			from horsehead
@@ -72,13 +147,33 @@
 			order by hh_number asc
 		]]>
 	</select>
-	
-	<select id="getReply" resultType="rreply">
+
+	<select
+		id="getReply"
+		resultType="reply">
 		<![CDATA[
 			select r_number, m_nickname, r_content, r_date
 			from reply, member
 			where m_number = r_writer
             and r_bbs = #{bbs_number}
+            order by r_number asc
 		]]>
 	</select>
+	<insert
+		id="insertReply"
+		parameterType="reply">
+		<![CDATA[
+			insert into reply(r_number,r_bbs,r_writer,r_content,r_date)
+         values(r_num.nextval,#{r_bbs},#{r_writer},#{r_content},sysdate)
+		]]>
+	</insert>
+
+	<delete
+		id="deleteReply"
+		parameterType="reply">
+		<![CDATA[
+			delete from reply where r_number = #{r_number}
+		]]>
+	</delete>
+
 </mapper>

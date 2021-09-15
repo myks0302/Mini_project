@@ -4,7 +4,8 @@
 		overflow-x: auto;
 		overflow-y: auto;
 		
-		margin-left: 350px;
+		display: flex;
+		justify-content: center;
 	}
 	
 	header{
@@ -13,6 +14,7 @@
 	
 	box-sizing: border-box;
 	border: 1px solid black;
+	
 	}
 	
 	header:hover{
@@ -24,19 +26,20 @@
 	height: 1000px;
 	
 	box-sizing: border-box;
-	border: 1px solid black;
+	border: 2px solid #009f47;
+	border-radius: 10px;
+	
+	background-color: white;
 	}
 	
 	form{
 	width: 1050px;
 	height: 900px;
 	
-	box-sizing: border-box;
-	border: 1px solid black; 
-	
 	margin-left: 75px;
 	margin-top: 30px;
 	}
+	
 	
 	select{
 	width: 100%;
@@ -45,6 +48,10 @@
 	table{
 	width: 100%;
 	height: 100%;
+	}
+	
+	h3{
+	color: #009f47;
 	}
 	
 	input[type="text"]{
@@ -56,6 +63,10 @@
 	height: 100%;
 	
 	overflow-y: auto;   
+	}
+	
+	tr td{
+	margin-top: 15px;
 	}
 	
 	tr:first-child{
@@ -88,6 +99,13 @@
 	height: 25px;
 	}
 	
-	tr:nth-child(3) {
-	height: 25px;
+	
+	tr:nth-child(2) th{
+	width: 60px;
 	}
+	
+	tr:nth-child(3){
+	height: 45px;
+	}
+	
+	

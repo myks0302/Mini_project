@@ -9,9 +9,10 @@
 	<typeAliases>
 		<typeAlias alias="board" type="org.samzo.cafe.board.BoardDTO"/>
 		<typeAlias alias="hhead" type="org.samzo.cafe.board.HorseDTO"/>
-		<typeAlias alias="rreply" type="org.samzo.cafe.board.ReplyDTO"/>
+		<typeAlias alias="reply" type="org.samzo.cafe.board.ReplyDTO"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/BoardMapper.xml" />
+		<mapper resource="mappers/UserMapper.xml" />
 	</mappers>
 </configuration>

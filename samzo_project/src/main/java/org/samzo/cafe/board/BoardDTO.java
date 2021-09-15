@@ -12,6 +12,7 @@ public class BoardDTO {
 		private Date bbs_date;
 		private int bbs_views;
 		private int bbs_activated;
+		private int bbs_writer;
 		
 		public BoardDTO() {
 			// TODO Auto-generated constructor stub
@@ -19,7 +20,6 @@ public class BoardDTO {
 	
 		public BoardDTO(int bbs_number, String bbs_category, String hh_head, String m_nickname, String bbs_title,
 				String bbs_content, Date bbs_date, int bbs_views, int bbs_activated) {
-			super();
 			this.bbs_number = bbs_number;
 			this.bbs_category = bbs_category;
 			this.hh_head = hh_head;
@@ -104,6 +104,14 @@ public class BoardDTO {
 
 		public void setBbs_views(int bbs_views) {
 			this.bbs_views = bbs_views;
+		}
+
+		public int getBbs_writer() {
+			return bbs_writer;
+		}
+
+		public void setBbs_writer(int bbs_writer) {
+			this.bbs_writer = bbs_writer;
 		}
 
 		@Override

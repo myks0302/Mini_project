@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="org.samzo.cafe.UserMapper">
+	<select id="selectAll" resultType="org.samzo.cafe.member.MemberDTO">
+		<![CDATA[
+			select * from member order by m_number asc
+		]]>
+	</select>
+	
+	<select id="selectOne" resultType="org.samzo.cafe.member.MemberDTO">
+		<![CDATA[
+			select * from member where m_id = #{m_id} AND m_pw = #{m_pw}
+		 ]]>
+	</select>
+	
+	<insert id = "insert">
+		INSERT INTO member(m_number,m_id,m_pw,m_nickname,m_email) 
+		VALUES (#{m_number},#{m_id},#{m_pw},#{m_nickname},#{m_email})
+	</insert> 
+	
+	<update id ="update">
+		update member 
+		set m_id = #{m_id}, 
+			m_pw = #{m_pw},
+			m_nickname = #{m_nickname},
+			m_email = #{m_email}
+		where m_number = #{m_number}
+	</update>
+	
+	<delete id = "delete">
+		delete 
+		from member
+		where m_number = #{m_number}
+	</delete>
+</mapper>
+
+
+

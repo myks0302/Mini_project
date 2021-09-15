@@ -13,6 +13,13 @@
 
 <P>  The time on the server is ${serverTime}. </P>
 
-<a href="board/list.do">게시판 목록</a>
+<ul>
+	<li><a href="board/list.do">게시판 목록</a></li>
+	<li><a href="login.do">로그인 페이지</a></li>
+	<li><a href="aside.do">aside 페이지</a></li>
+	<li><a href="footer.do">footer 페이지</a></li>
+	<li><a href="header.do">header 페이지</a></li>
+	<li><a href="mainsection.do">mainsection 페이지</a></li>
+</ul>
 </body>
 </html>

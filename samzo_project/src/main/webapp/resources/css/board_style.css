@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/* 분리 할것 내용부분 -검색 */ 
+
+.asd{
+	
+}
+.search_part{
+    float: right;
+	margin-top: 20px;
+}
+
+.box {
+    float: right;
+    
+}
+
+.searchbar_option{
+	 height: 30px;
+	 width: 50px;
+	  border : 1px solid gray;
+}
+
+.searchbar_input{
+    width: 200px; 
+    height: 27px;
+    border : 1px solid gray;
+    background-color: rgb(238, 237, 237);
+    outline: none;
+
+}
+
+.searchbar_button{
+    background-color: rgb(4, 185, 4);
+    color: white;
+    width: 55px;
+    height: 31px;
+    margin-left: -6px;
+    border : 0px solid rgb(250, 250, 250);
+  line-height: 1px;
+}
+
+.searchbar_input:focus{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 2px;
+}
+
+
+/*  내용 부분 - 게시판*/
+.section_content{
+    padding: 10px;
+}
+.section_board{
+    width :100%;
+    font-size: 12px;
+    border-collapse: collapse;
+    border-top: 1px solid black;
+}
+
+.section_board tr{
+    border-bottom: 1px solid rgb(194, 194, 194);
+}
+
+
+.section_board td{
+    border : 0px solid black;
+    padding: 6px;
+    text-align: center;
+  
+}
+.section_board tr td:nth-child(3){
+    text-align: left;
+}
+
+.section_board a{
+    color: black;
+    text-decoration: none;
+}
+.section_board tr td a:hover{
+    text-decoration: underline;
+    color: darkslategrey;
+}
+
+.board_min button{
+	background-color: rgba(3, 199, 90, 0.12);
+	color: #009f47;
+	
+	border: none;
+	text-align: center;
+		
+	width: 85px;
+	height: 35px;
+	
+	margin-top: 12px;
+	margin-left: 15px;
+}
+
+/* 페이징 처리 css*/
+.page{
+	text-align: center;
+	
+    margin-top: 10px;
+   
+   display: flex;
+   justify-content: center;
+}
+
+.page li{
+	display: inline-block;
+	list-style: none;
+}
+ .page a{
+    border : 1px solid black;
+    
+    font-size: 12px;
+    margin-left: 15px ;
+    padding: 4px 10px;
+    color: black;
+   
+}
+
+.page a:hover{
+    background-color: rgb(214, 214, 214);
+    
+    color: #009f47;
+}
